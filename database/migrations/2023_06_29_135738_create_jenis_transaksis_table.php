@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('jenis_transaksis', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('tabungans_id');
-            $table->foreign('tabungans_id')->references('id')->on('tabungans')->onDelete('cascade');
+            
             $table->string('nama');
             $table->timestamps();
         });

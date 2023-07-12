@@ -11,7 +11,9 @@ class Transaksi extends Model
     protected $fillable = [
         'jenistransaksis_id',
         'total',
-        'tanggal'
+        'tanggal',
+        'nomor',
+        'jenis'
 
     ];
 

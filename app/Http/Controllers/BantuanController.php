@@ -45,9 +45,11 @@ class BantuanController extends Controller
         $pertanyaan = Pertanyaan::find($id);
         if (!$pertanyaan){
             return response()->json([
+                'status' => '404',
                 'message' => 'pertanyaan Tidak ditemukan'
-            ],404);
+            ],);
         }return response() ->json([
+            'status' => '200',
             'pertanyaan' => $pertanyaan
         ]);
     }

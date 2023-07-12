@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BarangController;
 use App\Http\Controllers\BantuanController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\JenisTransaksiController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -21,6 +23,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 
+//auth
+Route::post('/register',[AuthController::class, 'register']);
+Route::post('/login',[AuthController::class, 'login']);
+Route::post('/changerole',[AuthController::class, 'changeRole']);
+
 //Barang
 Route::get('/barang', [BarangController::class, 'index']);
 Route::get('/barang/{id}', [BarangController::class, 'show']);
@@ -36,8 +43,9 @@ Route::post('/pertanyaan/delete/{id}', [BantuanController::class, 'destroy']);
 Route::post('/pertanyaan/update/{id}', [BantuanController::class, 'update']);
 Route::post('/pertanyaan', [BantuanController::class, 'store']);
 
-
-//auth
-Route::post('/register',[AuthController::class, 'register']);
-Route::post('/login',[AuthController::class, 'login']);
-Route::post('/changerole',[AuthController::class, 'changeRole']);
+//Jenis Transaksi
+Route::get('/jenis-transaksi', [JenisTransaksiController::class, 'index']);
+Route::get('/jenis-transaksi/{id}', [JenisTransaksiController::class, 'show']);
+Route::post('/jenis-transaksi/delete/{id}', [JenisTransaksiController::class, 'destroy']);
+Route::post('/jenis-transaksi/update/{id}', [JenisTransaksiController::class, 'update']);
+Route::post('/jenis-transaksi', [JenisTransaksiController::class, 'store']);

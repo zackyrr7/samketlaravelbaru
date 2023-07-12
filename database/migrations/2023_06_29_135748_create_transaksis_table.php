@@ -17,6 +17,8 @@ return new class extends Migration
             $table->foreign('jenistransaksis_id')->references('id')->on('jenis_transaksis')->onDelete('cascade');
             $table->date('tanggal');
             $table->decimal('total',9,3);
+            $table->string('nomor');
+            $table->string('jenis');
             $table->timestamps();
         });
     }

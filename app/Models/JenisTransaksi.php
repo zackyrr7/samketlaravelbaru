@@ -10,14 +10,11 @@ class JenisTransaksi extends Model
     use HasFactory;
     protected $fillable =
     [
-        'tabungans_id',
-        'nama'
+
+        'nama',
     ];
 
-    public function tabungan()
-    {
-        return $this->belongsTo(Tabungan::class);
-    }
+   
 
     public function transaksis()
     {
