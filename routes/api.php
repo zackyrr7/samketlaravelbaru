@@ -6,6 +6,7 @@ use App\Http\Controllers\BarangController;
 use App\Http\Controllers\BantuanController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\JenisTransaksiController;
+use App\Http\Controllers\TransaksiController;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,3 +50,14 @@ Route::get('/jenis-transaksi/{id}', [JenisTransaksiController::class, 'show']);
 Route::post('/jenis-transaksi/delete/{id}', [JenisTransaksiController::class, 'destroy']);
 Route::post('/jenis-transaksi/update/{id}', [JenisTransaksiController::class, 'update']);
 Route::post('/jenis-transaksi', [JenisTransaksiController::class, 'store']);
+
+
+
+//Transaksi
+Route::get('/transaksi', [TransaksiController::class, 'index']);
+Route::get('/transaksi/{jenistransaksis_id}', [TransaksiController::class, 'show']);
+Route::post('/transaksi/delete/{id}', [TransaksiController::class, 'destroy']);
+Route::post('/transaksi/update/{id}', [TransaksiController::class, 'update']);
+Route::post('/transaksi', [TransaksiController::class, 'transaksi']);
+Route::get('/transaksi-kategori/{id}', [TransaksiController::class, 'showKategori']);
+Route::get('/transaksi/{id}', [TransaksiController::class, 'show']);
